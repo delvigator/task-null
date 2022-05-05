@@ -27,6 +27,14 @@ public:
     int deleteBox(int index);
     Box &operator[](int index);
 
+    void setLength(int length);
+
+    void setWidth(int width);
+
+    void setHeight(int height);
+
+    void setMaxWeight(double maxWeight);
+
 };
 ostream &operator<<(ostream& out,Container& container);
 

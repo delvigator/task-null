@@ -28,6 +28,24 @@ int Container::getHeight(){
 double Container::getMaxWeight(){
     return maxWeight;
 }
+
+void Container::setLength(int length) {
+    Container::length = length;
+}
+
+void Container::setWidth(int width) {
+    Container::width = width;
+}
+
+void Container::setHeight(int height) {
+    Container::height = height;
+}
+
+void Container::setMaxWeight(double maxWeight) {
+    if(getSumOfWeight()>maxWeight) throw WeightException("new max weight lesser than sum of weight");
+    Container::maxWeight = maxWeight;
+}
+
 double Container::getSumOfWeight(){
     double sum=0;
     for(int i=0;i<containerOfBoxes.size();i++){
@@ -49,7 +67,7 @@ int Container::putBox(Box box){
     double check=getSumOfWeight()+box.getWeight();
     if(check>maxWeight) throw WeightException("max weight has been exceeded");
     containerOfBoxes.push_back(box);
-    return 0;
+    return containerOfBoxes.size()-1;
 }
 int Container::deleteBox(int index){
 containerOfBoxes.erase(containerOfBoxes.begin()+index);
@@ -65,4 +83,22 @@ ostream &operator<<(ostream& out,Container& container){
        out<< container[i]<<"\n";
     }
     cout<<"}\n";
+}
+istream& operator>>(istream &in,Container &container) {
+    int length;
+    int width;
+    int height;
+    double maxWeight;
+    cout << "enter width";
+    in >> width;
+    container.setWidth(width);
+    cout << "enter length";
+    in >> length;
+    container.setLength(length);
+    cout << "enter height";
+    in >> height;
+    container.setHeight(height);
+    cout << "enter max weight";
+    in >> maxWeight;
+    container.setMaxWeight(maxWeight);
 }
