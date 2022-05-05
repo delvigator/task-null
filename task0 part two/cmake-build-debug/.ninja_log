@@ -1,0 +1,25 @@
+# ninja log v5
+1	2394	6733643455241372	CMakeFiles/task0_part_two.dir/main.cpp.obj	7922a6f27a96ad03
+117	1190	6733644622513804	CMakeFiles/task0_part_two.dir/WeightExeption.cpp.obj	c3163132b7fb7bb4
+94	2257	6733644633162621	CMakeFiles/task0_part_two.dir/Box.cpp.obj	c7b80c0a0e5869bc
+6	2260	6733644633202645	CMakeFiles/task0_part_two.dir/Container.cpp.obj	f3a38ebef4d3dd97
+2261	3241	6733644642908405	task0_part_two.exe	78eaf1d925de8852
+6	2412	6733647685268634	CMakeFiles/task0_part_two.dir/main.cpp.obj	7922a6f27a96ad03
+2414	4629	6733647707293171	task0_part_two.exe	78eaf1d925de8852
+7	1312	6733648167877058	CMakeFiles/task0_part_two.dir/Container.cpp.obj	f3a38ebef4d3dd97
+1333	2272	6733648177355890	task0_part_two.exe	78eaf1d925de8852
+6	672	6733648358096180	CMakeFiles/task0_part_two.dir/main.cpp.obj	7922a6f27a96ad03
+673	1305	6733648364104630	task0_part_two.exe	78eaf1d925de8852
+5	714	6733648977141313	CMakeFiles/task0_part_two.dir/main.cpp.obj	7922a6f27a96ad03
+715	1265	6733648982532362	task0_part_two.exe	78eaf1d925de8852
+6	1440	6733650953524760	CMakeFiles/task0_part_two.dir/main.cpp.obj	7922a6f27a96ad03
+44	1456	6733650953894720	CMakeFiles/task0_part_two.dir/Container.cpp.obj	f3a38ebef4d3dd97
+1457	2504	6733650964209772	task0_part_two.exe	78eaf1d925de8852
+10	2470	6733655104155731	CMakeFiles/task0_part_two.dir/Container.cpp.obj	f3a38ebef4d3dd97
+2472	4906	6733655128373765	task0_part_two.exe	78eaf1d925de8852
+5	968	6733655714266382	CMakeFiles/task0_part_two.dir/Container.cpp.obj	f3a38ebef4d3dd97
+969	1560	6733655720078364	task0_part_two.exe	78eaf1d925de8852
+7	1906	6733656362331189	CMakeFiles/task0_part_two.dir/Container.cpp.obj	f3a38ebef4d3dd97
+1908	2723	6733656369985072	task0_part_two.exe	78eaf1d925de8852
+7	1849	6733656587251907	CMakeFiles/task0_part_two.dir/Container.cpp.obj	f3a38ebef4d3dd97
+1851	2811	6733656596803651	task0_part_two.exe	78eaf1d925de8852
