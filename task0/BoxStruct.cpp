@@ -20,7 +20,8 @@ Box::Box(int width, int length, int height, double weight, int value) {
 }
 
 int getSumOfValue(Box *array, int size) {
-    //2. вычисляет суммарную стоимость содержимого всех коробок.
+    //Вход:массив коробок(array),размер массива(size)
+    //Выход:суммарная стоимость содержимого всех коробок(value)
 
     int sumOfValue = 0;
     for (int i = 0; i < size; i++) {
@@ -30,8 +31,9 @@ int getSumOfValue(Box *array, int size) {
 }
 
 bool checkSumOfDataLess(Box *array, int num, int size) {
-    //3. проверяет, что сумма длины, ширины и высоты всех коробок
-    // не превосходит заданного значения.
+    //Вход:массив коробок(array),размер массива(size)
+    //Выход:проверка,что сумма длины, ширины и высоты всех коробок
+    //не превосходит заданного значения(bool)
     int sum = 0;
     for (int i = 0; i < size; i++) {
         sum += array[i].height + array[i].length + array[i].width;
@@ -42,13 +44,14 @@ bool checkSumOfDataLess(Box *array, int num, int size) {
 }
 
 double maxWeightOfBox(Box *array, int maxV, int size) {
-    //4. определяет максимальный вес коробок, объем которых не
+    //Вход:массив коробок(array),параметр(maxV), размер массива(size)
+    // Выход: максимальный вес коробок, объем которых не
     // больше параметра maxV
     double maxWeightOfBox = 0;
     int volumeOfBox = 0;
     for (int i = 0; i < size; i++) {
         volumeOfBox = array[i].width * array[i].height * array[i].length;
-        if (volumeOfBox < maxV || volumeOfBox == maxV) {
+        if (volumeOfBox <= maxV) {
             if (array[i].weight > maxWeightOfBox) {
                 maxWeightOfBox = array[i].weight;
             }
@@ -59,7 +62,8 @@ double maxWeightOfBox(Box *array, int maxV, int size) {
 }
 
 bool checkOfPut(Box *array, int size) {
-    //5. проверка, можно ли запихать коробки в коробки
+    //Вход:массив коробок(array),размер массива(size)
+    //Выход: проверка, можно ли запихать коробки в коробки
     int count = 0;
     int maxVolumeNow = -1;
     int volume;
@@ -69,10 +73,9 @@ bool checkOfPut(Box *array, int size) {
         for (int i = 0; i < size; i++) {
             volume = array[i].width * array[i].height * array[i].length;
             if (volume > maxVolumeNow) {
-                if (line == -1 | volume < line)
+                if (line == -1 | volume < line) //проверка, коробка первая или она меньше чем предыдущая максимальная
                     maxVolumeNow = volume;
             }
-
         }
         if (maxVolumeNow == -1) fail = true;
 

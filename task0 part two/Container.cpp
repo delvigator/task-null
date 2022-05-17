@@ -82,7 +82,7 @@ ostream &operator<<(ostream& out,Container& container){
     for (int i=0;i<container.countBoxes();i++){
        out<< container[i]<<"\n";
     }
-    cout<<"}\n";
+    out<<"}\n";
 }
 istream& operator>>(istream &in,Container &container) {
     int length;
