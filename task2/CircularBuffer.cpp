@@ -1,51 +1,71 @@
 
 #include "CircularBuffer.h"
-template <typename T>
-CircularBuffer<T>::CircularBuffer(int size) {
+
+CircularBuffer::CircularBuffer(int size) {
     this->size=size;
-    data=new T[size];
+    data=new int[size];
     indexIn=0;
     indexOut=0;
 
 }
-template <typename T>
-CircularBuffer<T>::~CircularBuffer() {
+
+CircularBuffer::~CircularBuffer() {
     delete[]data;
 }
-template <typename T>
-int CircularBuffer<T>::pushBack(T &elem) {
-    if(size==indexIn)throw "buffer is full";
+
+int CircularBuffer::pushBack(int elem) {
+    if(size==indexIn)throw exception();
     data[indexIn++]=elem;
     return 0;
 }
-template <typename T>
-T CircularBuffer<T>::takeElem() {
-    if (checkEmpty())
-        throw "Buffer is empty";
+
+int CircularBuffer::takeElem() {
+    if (isEmpty())
+        throw exception();
     for (int i = 1; i < indexIn; ++i)
         data[i - 1] = data[i];
 
     --indexIn;
     return data[indexOut];
 }
-template <typename T>
-T CircularBuffer<T>::getElem() {
-    if (checkEmpty())
-        throw "Buffer is empty";
+
+int CircularBuffer::getElem() {
+    if (isEmpty())
+        throw exception();
     return data[indexOut];
 }
-template <typename T>
-int CircularBuffer<T>::getSize() {
+
+int CircularBuffer::getSize()const {
     return size;
 }
-template <typename T>
-bool CircularBuffer<T>::checkEmpty() {
+
+bool CircularBuffer::isEmpty() const {
     if(indexIn==0) return true;
     return false;
 }
-template <typename T>
-int CircularBuffer<T>::makeEmpty()  {
+
+int CircularBuffer::makeEmpty()  {
 indexIn=0;
 indexOut=0;
     return 0;
+}
+
+CircularBuffer::Iterator::Iterator(const CircularBuffer &circularBuffer) :circularBuffer(circularBuffer){
+
+}
+
+void CircularBuffer::Iterator::start() {
+    current=circularBuffer.data+circularBuffer.indexOut;
+}
+
+void CircularBuffer::Iterator::next() {
+    current++;
+}
+
+bool CircularBuffer::Iterator::finish() const {
+    return current==circularBuffer.data+circularBuffer.indexOut+circularBuffer.indexIn;
+}
+
+int CircularBuffer::Iterator::getValue() const {
+    return *current;
 }

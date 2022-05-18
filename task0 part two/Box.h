@@ -1,6 +1,6 @@
 
 #include <iostream>
-using namespace std;
+
 #ifndef TASK0_BOX_H
 #define TASK0_BOX_H
 class Box {
@@ -29,7 +29,7 @@ public:
 };
 
 bool operator==(Box box1, Box box2);
-ostream &operator<<(ostream& out,Box &box);
-istream& operator>>(istream &in,Box &box);
+std::ostream &operator<<(std::ostream& out,Box &box);
+std::istream& operator>>(std::istream &in,Box &box);
 
 #endif //TASK0_BOX_H

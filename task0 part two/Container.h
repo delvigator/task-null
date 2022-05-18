@@ -2,13 +2,13 @@
 #include <vector>
 #include "Box.h"
 #include <iostream>
-using namespace std;
+
 #ifndef TASK0_CONTAINER_H
 #define TASK0_CONTAINER_H
 
 class Container {
 private:
-    vector<Box> containerOfBoxes;
+    std::vector<Box> containerOfBoxes;
     int length;
     int width;
     int height;
@@ -36,6 +36,6 @@ public:
     void setMaxWeight(double maxWeight);
 
 };
-ostream &operator<<(ostream& out,Container& container);
+std::ostream &operator<<(std::ostream& out,Container& container);
 
 #endif //TASK0_CONTAINER_H

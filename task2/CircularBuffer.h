@@ -3,22 +3,34 @@
 
 #include <iostream>
 using namespace std;
-template <typename T>
+
 class CircularBuffer {
 private:
-    T*data;
+    int *data;
 int size;
 int indexIn;
 int indexOut;
 public:
-CircularBuffer(int size);
+explicit CircularBuffer(int size);
 ~CircularBuffer();
-int pushBack(T &elem) const;
-T takeElem();
-T getElem();
+int pushBack(int elem);
+int takeElem();
+int getElem();
 int getSize() const;
-int makeEmpty() const;
-bool checkEmpty() const;
+int makeEmpty();
+bool isEmpty() const;
+    class Iterator
+    {
+    private:
+        const CircularBuffer& circularBuffer;
+        int *current;
+    public:
+        explicit Iterator(const CircularBuffer& circularBuffer);
+        void start();
+        void next();
+        bool finish() const;
+        int getValue() const;
+    };
 
 };
 

@@ -56,33 +56,33 @@ bool operator==(Box box1, Box box2) {
     return false;
 }
 
-ostream &operator<<(ostream& out,Box &box) {
+std::ostream &operator<<(std::ostream& out,Box &box) {
     //оператор вывода
     out << "{width:" << box.getWidth() << ", length:" << box.getLength()
         << ", height:" << box.getHeight() << ", weight:" << box.getWeight()
         << ", value:" << box.getValue() << "}";
 }
 
-istream& operator>>(istream &in,Box &box) {
+std::istream& operator>>(std::istream &in,Box &box) {
     //оператор ввода
     int width;
     int length;
     int height;
     double weight;
     int value;
-    cout << "enter width";
+    std::cout << "enter width";
     in >> width;
     box.setWidth(width);
-    cout << "enter length";
+   std:: cout << "enter length";
     in >> length;
     box.setLength(length);
-    cout << "enter height";
+    std::cout << "enter height";
     in >> height;
     box.setHeight(height);
-    cout << "enter weight";
+    std::cout << "enter weight";
     in >> weight;
     box.setWeight(weight);
-    cout << "enter value";
+   std:: cout << "enter value";
     in >> value;
     box.setValue(value);
 }

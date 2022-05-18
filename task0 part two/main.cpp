@@ -16,14 +16,14 @@ int main() {
    Box box=container.getBox(2);
    int countB=container.countBoxes();
    int sumV=container.getSumOfValue();
-   cout<<"\ncount boxes: "<< countB;
-   cout<<"\nsum of value: "<< sumV;
-   cout<<"\nget box: "<< box;
-   cout<<container;
+    std::cout<<"\ncount boxes: "<< countB;
+    std::cout<<"\nsum of value: "<< sumV;
+    std::cout<<"\nget box: "<< box;
+    std::cout<<container;
    container.deleteBox(2);
-   cout<<"\nadded: "<<container.putBox(boxOne);
-    cout<<container;
-    cout<<"\noperator []:";
+    std::cout<<"\nadded: "<<container.putBox(boxOne);
+    std::cout<<container;
+    std::cout<<"\noperator []:";
 container[2]=boxThree;
-    cout<<container;
+    std::cout<<container;
 }
