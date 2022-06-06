@@ -61,6 +61,12 @@ build CMakeFiles/task2.dir/CircularBuffer.cpp.obj: CXX_COMPILER__task2_Debug C$:
   OBJECT_DIR = CMakeFiles\task2.dir
   OBJECT_FILE_DIR = CMakeFiles\task2.dir
 
+build CMakeFiles/task2.dir/Exception.cpp.obj: CXX_COMPILER__task2_Debug C$:/Users/79087/CLionProjects/task2/Exception.cpp || cmake_object_order_depends_target_task2
+  DEP_FILE = CMakeFiles\task2.dir\Exception.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\task2.dir
+  OBJECT_FILE_DIR = CMakeFiles\task2.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target task2
@@ -69,7 +75,7 @@ build CMakeFiles/task2.dir/CircularBuffer.cpp.obj: CXX_COMPILER__task2_Debug C$:
 #############################################
 # Link the executable task2.exe
 
-build task2.exe: CXX_EXECUTABLE_LINKER__task2_Debug CMakeFiles/task2.dir/main.cpp.obj CMakeFiles/task2.dir/CircularBuffer.cpp.obj
+build task2.exe: CXX_EXECUTABLE_LINKER__task2_Debug CMakeFiles/task2.dir/main.cpp.obj CMakeFiles/task2.dir/CircularBuffer.cpp.obj CMakeFiles/task2.dir/Exception.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\task2.dir

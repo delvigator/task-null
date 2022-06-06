@@ -1,0 +1,6 @@
+# ninja log v5
+8	963	6753653656408110	CMakeFiles/task4.dir/HashTable.cpp.obj	efa1b2f6376660ec
+4	1153	6753653043537075	CMakeFiles/task4.dir/main.cpp.obj	1f99ed1b20f507c9
+964	1493	6753653661584112	task4.exe	f814eda86652b555
+6	2510	6756740549654633	build.ninja	67cc9455bece81ff
+9	1933	6752931336311219	CMakeFiles/task4.dir/ElemException.cpp.obj	2c65f9148021ebbe
