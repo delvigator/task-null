@@ -3,30 +3,30 @@
 
 HashTable::HashTable(int n) {
     this->capacity=getPrime(n);
-    table=new std::list<int>[capacity];
+    table=new Deque[capacity];
 
 }
 HashTable::~HashTable() {
-    table->clear();
+    table->makeEmpty();
     this->capacity=0;
 }
 int HashTable::insertItem(int key, int data) {
     int index= hashFunction(key);
-    table[index].push_back(data);
+    table[index].put(data,table[index].begin());
     return 0;
 }
 
 int HashTable::deleteItem(int key) {
     if(checkEmpty())throw ElemException("no elements with this key");
     int index = hashFunction(key);
-    table[index].erase(table[index].begin());
+    table[index].del(table[index].begin());
     return 0;
 }
 
 bool HashTable::checkEmpty() {
     bool result=true;
     for(int i=0;i<capacity;i++){
-        if(!table[i].empty())
+        if(!table[i].checkEmpty())
             result=false;
         }
     return result;
@@ -66,19 +66,28 @@ int HashTable::hashFunction(int key)
 }
 
 int HashTable::toString() {
-    for(int i=0;i<capacity;i++){
-        std:: cout << "table[" << i << "]";
-        for (auto x : table[i])
-            std::cout << " --> " << x;
-        std:: cout << std::endl;
+    for (int i = 0; i < capacity; i++) {
+        std::cout << "index ["<<i<<"]";
+        auto *it = new Deque::DequeIter(table[i]);
+        it->start();
+        while (!it->finish()) {
+            it->next();
+            std::cout << " --> " << it->getValue();
+
+        }
+        std::cout << std::endl;
     }
+    return  0;
 }
 int HashTable::search(int data) {
     int index;
     bool fail=true;
 for(int i=0;i<capacity;i++){
-    for (auto x : table[i]){
-        if(x==data) {
+    auto *it=new Deque::DequeIter(table[i]);
+    it->start();
+    while(!it->finish()){
+        it->next();
+        if(it->getValue()==data) {
             index=i;
             fail=false;
         }
@@ -90,41 +99,39 @@ for(int i=0;i<capacity;i++){
 
 int HashTable::makeEmpty() {
     for(int i=0;i<capacity;i++){
-        table[i].clear();
+        table[i].makeEmpty();
     }
     return 0;
 }
-HashTable::Iterator::Iterator(const HashTable &hashTable):hashTable(hashTable) {
+HashTable::Iterator::Iterator(const HashTable &hashTable):hashTable(hashTable),index(0),check(false) {
 
 }
 void HashTable::Iterator::start() {
-    iter = hashTable.table[index].begin();
 
+    iter=new Deque::DequeIter(hashTable.table[index]);
+    iter->start();
+    iter->next();
 }
 
 int HashTable::Iterator::getValue() {
-
-    if (iter == hashTable.table[index].end() && index != (hashTable.capacity - 1)) {
-    next();
-    getValue();
-}
-    if(finish()) {
-        return 0;
-    }
-   return *iter;
+   return iter->getValue();
 }
 
 void HashTable::Iterator::next() {
-    if (!finish()) {
-        if (iter == hashTable.table[index].end()) {
+    if (index != hashTable.capacity - 1) {
+        if (iter->finish()) {
             index++;
-            iter = hashTable.table[index].begin();
+            start();
         } else {
-            iter++;
+            iter->next();
         }
     }
+    else check=true;
 }
 
 bool HashTable::Iterator::finish() {
-    return (index==(hashTable.capacity-1)&&(iter==hashTable.table[index].end()));
+
+    if(!check)
+    return (index==hashTable.capacity&&iter->finish());
+    return check;
 }

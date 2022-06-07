@@ -67,6 +67,12 @@ build CMakeFiles/task4.dir/ElemException.cpp.obj: CXX_COMPILER__task4_Debug C$:/
   OBJECT_DIR = CMakeFiles\task4.dir
   OBJECT_FILE_DIR = CMakeFiles\task4.dir
 
+build CMakeFiles/task4.dir/List.cpp.obj: CXX_COMPILER__task4_Debug C$:/Users/79087/CLionProjects/task4/List.cpp || cmake_object_order_depends_target_task4
+  DEP_FILE = CMakeFiles\task4.dir\List.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\task4.dir
+  OBJECT_FILE_DIR = CMakeFiles\task4.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target task4
@@ -75,7 +81,7 @@ build CMakeFiles/task4.dir/ElemException.cpp.obj: CXX_COMPILER__task4_Debug C$:/
 #############################################
 # Link the executable task4.exe
 
-build task4.exe: CXX_EXECUTABLE_LINKER__task4_Debug CMakeFiles/task4.dir/main.cpp.obj CMakeFiles/task4.dir/HashTable.cpp.obj CMakeFiles/task4.dir/ElemException.cpp.obj
+build task4.exe: CXX_EXECUTABLE_LINKER__task4_Debug CMakeFiles/task4.dir/main.cpp.obj CMakeFiles/task4.dir/HashTable.cpp.obj CMakeFiles/task4.dir/ElemException.cpp.obj CMakeFiles/task4.dir/List.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\task4.dir

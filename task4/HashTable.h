@@ -1,6 +1,6 @@
 #include <iostream>
 #include "ElemException.cpp"
-#include <list>
+#include "List.h"
 #ifndef TASK4_HASHTABLE_H
 #define TASK4_HASHTABLE_H
 
@@ -8,7 +8,7 @@
 class HashTable {
 private:
     int capacity;
-   std::list<int> *table;
+   Deque* table;
 public:
 HashTable(int n);
 ~HashTable();
@@ -26,7 +26,8 @@ int toString();
     private:
         const HashTable& hashTable;
         int index;
-        std::list<int>::iterator iter;
+        bool check;
+        Deque::DequeIter *iter;
 
     public:
         explicit Iterator(const HashTable& hashTable);
