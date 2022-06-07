@@ -119,18 +119,7 @@ void Tree:: print(TreeElem* root,std::ostream& out)
     print(root -> left,out);
     print(root -> right,out);
 }
-/*void Tree::Print(std::ostream& out) {
-    Print(root, out);
-}
 
-void Tree::Print(TreeElem* elem, std::ostream& out) {
-    if (elem != nullptr) {
-        out << elem->info << "\n";
-        Print(elem->left, out);
-        Print(elem->right, out);
-    }
-}
-*/
 unsigned Tree::countOfEven() {
     return countOfEven(root);
 }

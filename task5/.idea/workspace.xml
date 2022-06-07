@@ -12,28 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc1271c9-27ae-4549-8a54-bb3a0626bfae" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../task2/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../task2/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task2/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../task2/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task2/cmake-build-debug/CMakeFiles/task2.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../task2/cmake-build-debug/CMakeFiles/task2.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task2/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../task2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task2/cmake-build-debug/task2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../task2/cmake-build-debug/task2.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task2/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../task2/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task3/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../task3/List.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task3/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../task3/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task3/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../task3/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task3/cmake-build-debug/CMakeFiles/task3.dir/List.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../task3/cmake-build-debug/CMakeFiles/task3.dir/List.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task3/cmake-build-debug/CMakeFiles/task3.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../task3/cmake-build-debug/CMakeFiles/task3.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task3/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../task3/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task3/cmake-build-debug/task3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../task3/cmake-build-debug/task3.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task4/cmake-build-debug/.cmake/api/v1/reply/cache-v2-486dcb9a929adefb02e5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task4/cmake-build-debug/.cmake/api/v1/reply/index-2022-06-06T16-37-27-0785.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task4/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../task4/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task4/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../task4/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task4/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../task4/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task4/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../task4/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task4/cmake-build-debug/CMakeFiles/task4.dir/HashTable.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../task4/cmake-build-debug/CMakeFiles/task4.dir/HashTable.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task4/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../task4/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task4/cmake-build-debug/task4.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../task4/cmake-build-debug/task4.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tree.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tree.h" afterDir="false" />
@@ -43,7 +21,6 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task5.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task5.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/task5.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/task5.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654545751275</updated>
       <workItem from="1654545761802" duration="23379000" />
-      <workItem from="1654588200231" duration="13756000" />
+      <workItem from="1654588200231" duration="14066000" />
     </task>
     <servers />
   </component>

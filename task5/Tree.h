@@ -29,8 +29,7 @@ void clear();
 
 TreeElem *getRoot();
 int add(int x,const std::vector<bool>& arr);
-    //void Print(TreeElem* elem, std::ostream& out);
-   // void Print(std::ostream& out);
+
     void print(TreeElem* elem,std::ostream& out);
     unsigned countOfEven();
 
