@@ -165,8 +165,9 @@ int Deque::makeEmpty() {
 
 
 Deque &Deque::operator=(const Deque &o) {
-    if (this != &o)
-    {
+    if (this != &o){
+
+        makeEmpty();
         buf = new Node;
         const Node* tmp = o.buf->next;
         Node* p = buf;

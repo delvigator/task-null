@@ -13,9 +13,9 @@ int main() {
     std::cout << queue.getElem();
     queue.takeElem();
     CircularBuffer queue1(3);
-    queue1.pushBack(0);
-    queue1.pushBack(1);
-   queue1.pushBack(2);
+    queue1.pushBack(3);
+    queue1.pushBack(4);
+   queue1.pushBack(5);
    CircularBuffer::Iterator it(queue1);
    it.start();
    std::cout << std::endl;

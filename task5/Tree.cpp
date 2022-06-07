@@ -2,74 +2,211 @@
 #include <utility>
 #include "Tree.h"
 Tree::Tree() {
-    root= new TreeElem(0);
-  //root= nullptr;
+    root= new TreeElem();
    root->right= nullptr;
    root->left= nullptr;
-    //root->check= false;
 
-    count=0;
 }
+Tree::Tree(int x) {
+    root= new TreeElem();
+    root->info=x;
+    root->right= nullptr;
+    root->left= nullptr;
+
+}
+void Tree::clear(TreeElem* root) {
+    if (root != nullptr) {
+        clear(root->left);
+        clear(root->right);
+        delete root;
+    }
+}
+void Tree::clear() {
+    if (root != nullptr) {
+        clear(root);
+        root = nullptr;
+    }
+}
+
+
 Tree::~Tree() {
-    delete root;
-    count=0;
+    clear();
+
 }
+Tree::Tree(const Tree& o) {
+    std::cout << "Конструктор копирования" << std::endl;
+    root = copyTree(o.root);
+}
+
+TreeElem * Tree::copyTree(TreeElem *o) {
+    if (o != nullptr) {
+        return new TreeElem(o->info,copyTree(o->left), copyTree(o->right));
+    }
+    return nullptr;
+}
+Tree::Tree(Tree&& o) noexcept : root(o.root) {
+    o.root = nullptr;
+}
+
 
 TreeElem *Tree::getRoot() {
     return root;
 }
-
-int Tree::getCount() const {
-    return count;
-}
-TreeElem* Tree::add(int x,TreeElem* root,int *arr,int size,int &i) {
-// условие выхода: если дерево пустое, просто вставим элемент в корень
-    if (!root) {
-        return new TreeElem(x);
+Tree& Tree::operator=(const Tree& obj) {
+    if (this != &obj) {
+        delete root;
+        root = copyTree(obj.root);
     }
-// в непустом дереве выполняем поиск
-    if (arr[i]==0) {
-        root -> left = add(x,root -> left, arr,size,i);
-    }
-    if (arr[i]==1) {
-        root -> right = add(x,root -> right, arr,size,i);
-    }
-    return root; // возвращаем корень модифицированного дерева
-}
-
-Tree &Tree::operator=(Tree o) {
-    std::swap(*this,o);
     return *this;
+}
 
+Tree& Tree::operator=(Tree&& obj) noexcept {
+    if (this != &obj) {
+        delete root;
+        root = obj.root;
+        obj.root = nullptr;
+    }
+    return (*this);
 }
 
 
-void Tree::printDown(const TreeElem*temp)
+int Tree::add(int x,const std::vector<bool>& arr) {
+    if (!root) {
+        if (!arr.empty()) {
+            throw std::exception();
+        }
+        root = new TreeElem;
+        root->info = x;
+
+    }
+    else {
+    TreeElem* current = root;
+    unsigned size = arr.size();
+    for (unsigned i = 0; i < size; i++) {
+    if (i == size - 1) {
+    TreeElem* old = current;
+    current = new TreeElem;
+    arr[i] ? old->right = current : old->left = current;
+    current->left = nullptr;
+    current->right = nullptr;
+}
+    else if (arr[i] && current->right != nullptr) {
+    current = current->right;
+}
+    else if (!arr[i] && current->left != nullptr) {
+    current = current->left;
+}
+    else {
+throw std::exception();
+}
+}
+current->info = x;
+}
+return 0;
+
+}
+std::ostream& operator<<(std::ostream& out, Tree& obj) {
+    obj.print(obj.root,out);
+    return out;
+}
+void Tree:: print(TreeElem* root,std::ostream& out)
 {
-
-    if (!temp) {
+    if (!root) {
         return;
+
     }
-    std::cout << temp -> info << " ";
-    printDown(temp -> left);
-    printDown(temp -> right);
+    out << root -> info << " ";
+    print(root -> left,out);
+    print(root -> right,out);
+}
+/*void Tree::Print(std::ostream& out) {
+    Print(root, out);
 }
 
-std::ostream &operator<<(std::ostream &out,Tree &tree) {
-    if (!tree.getRoot()) {
-        out<<"";
+void Tree::Print(TreeElem* elem, std::ostream& out) {
+    if (elem != nullptr) {
+        out << elem->info << "\n";
+        Print(elem->left, out);
+        Print(elem->right, out);
     }
-    out<<tree.getRoot()->info<<" ";
-out<<tree.getRoot()->left;
-out<<tree.getRoot()->right;
+}
+*/
+unsigned Tree::countOfEven() {
+    return countOfEven(root);
 }
 
-int Tree::countNumbers(TreeElem *current,int &result) {
+unsigned Tree::countOfEven(TreeElem* elem) {
+    return (elem == nullptr ? 0 :
+            (elem->info % 2 == 0) + countOfEven(elem->left) + countOfEven(elem->right));
+}
 
-    if (!current) {
-        return result;
+bool Tree::allPositive() {
+    return allPositive(root);
+}
+
+bool Tree::allPositive(const TreeElem* elem) {
+    return elem == nullptr || elem->info > 0 && allPositive(elem->left) && allPositive(elem->right);
+}
+
+void Tree::deleteLeaves() {
+    deleteLeaves(root);
+}
+bool Tree::deleteLeaves(TreeElem* elem) {
+    if (elem == nullptr) {
+        return false;
     }
-    if(current->info%2==0) result++;
-    countNumbers(current -> left,result);
-    countNumbers(current -> right,result);
+    else {
+        if (elem->right == nullptr && elem->left == nullptr) {
+            delete elem;
+            return true;
+        }
+        if (deleteLeaves(elem->left)) {
+            elem->left = nullptr;
+        }
+        if (deleteLeaves(elem->right)) {
+            elem->right = nullptr;
+        }
+        return false;
+    }
+}
+double Tree::average() {
+    std::pair<long, int> res(0, 0);
+    average(root, res);
+    return ((double)res.first) / res.second;
+}
+
+void Tree::average(const TreeElem* elem, std::pair<long, int>& values) {
+    if (elem != nullptr) {
+        values.first += elem->info;
+        values.second += 1;
+        average(elem->left, values);
+        average(elem->right, values);
+    }
+}
+
+std::vector<bool> Tree::searchElem(int x) {
+    std::vector<bool> res{};
+    if (!searchElem(root, res, x)) {
+        throw std::exception();
+    }
+    return res;
+}
+
+bool Tree::searchElem(TreeElem* const elem, std::vector<bool>& arr, int x) {
+    if (elem != nullptr) {
+        if (elem->info == x) {
+            return true;
+        }
+        arr.push_back(false);
+        if (searchElem(elem->left, arr, x)) {
+            return true;
+        }
+        arr.pop_back();
+        arr.push_back(true);
+        if (searchElem(elem->right, arr, x)) {
+            return true;
+        }
+        arr.pop_back();
+    }
+    return false;
 }
